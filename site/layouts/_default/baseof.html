@@ -6,6 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
   <title>{{ $.Site.Title }}</title>
+  <meta property="og:title" content="{{ $.Site.Title }}" />
+
+  {{ range ((where .Site.Pages "Section" "seo").ByParam "rank") }}
+    {{ if .Params.description }}
+      <meta property="og:url" content="https://collateral-solutions.netlify.com" />
+      <meta name="description" content="{{ .Params.description }}">
+      <meta property="og:description" content="{{ .Params.description }}">
+      <meta property="og:image" content="/images/hero.png">
+
+      <link rel="canonical" href="https://collateral-solutions.netlify.com"/>
+    {{ end }}
+  {{ end }}
 
   {{ $stylesheet := .Site.Data.webpack.main }}
   {{ with $stylesheet.css }}

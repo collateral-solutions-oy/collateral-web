@@ -1,0 +1,72 @@
+.content-section {
+  padding-top: 10rem;
+}
+
+.small-container {
+  max-width: 768px;
+}
+
+.section-h2 {
+  margin-bottom: 4rem;
+  font-size: 3.5rem;
+  text-align: center;
+  color: $color-red;
+}
+
+.section-svg {
+  width: 10rem;
+  height: 100%;
+  margin-bottom: 2rem;
+}
+
+.center-horizontally-container {
+  display: flex;
+  justify-content: center;
+}
+
+.center-vertically-container {
+  display: flex;
+  align-items: center;
+}
+
+.section-svg-description {
+  text-align: center;
+  max-width: 16rem;
+}
+
+.lärvi {
+  border: 1px solid $color-black;
+  border-radius: 50%;
+}
+
+.team-members {
+  .team-name {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .team-role {
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+  }
+
+  .team-contact {
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    color: $color-red !important;
+    text-decoration: underline !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .we-description {
+    max-width: 16rem;
+    text-align: center;
+  }
+
+  .mobile-margin-container {
+    margin-bottom: 4rem;
+  }
+}
+

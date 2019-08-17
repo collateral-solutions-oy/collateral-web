@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  margin-top: 10rem;
+  background-color: $color-red;
+  .footer-logo {
+    height: 2rem;
+    margin: 1.5rem;
+  }
+  .copyright {
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    text-align: right;
+    color: $color-white;
+  }
+}
+
+@media (max-width: 767px) {
+
+}

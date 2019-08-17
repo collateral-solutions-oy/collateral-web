@@ -1,0 +1,32 @@
+.hero-image {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay-gradient {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(0deg, rgba(44,44,44,0.2) 0%, rgba(224,23,3,0.6) 100%);
+}
+
+.hero-overlay-dark {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: $color-black;
+  opacity: 0.5;
+}
+
+.hero-h1 {
+  position: absolute;
+  top: 50%;
+  font-size: 4rem;
+  font-weight: lighter;
+  transform: translateY(-50%);
+  color: $color-white;
+  opacity: 1;
+}

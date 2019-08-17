@@ -2,14 +2,18 @@
   <div class="container small-container">
     <h2 class="section-h2">Our products</h2>
     <div class="row">
-      <div class="col-md">
-        <div class="center-horizontally-container">
-          <img class="section-svg" src="/images/evoirlogo.png" alt="Evoir logo"/>
-        </div>
-        <div class="center-horizontally-container">
-          <p class="section-svg-description mobile-margin-container">Evoir is a ground-breaking, first-of-a-kind web service that allows landlords to manage dozens or even hundreds of apartments effortlessly.</p>
-        </div>
-      </div>
+      {{ range ((where .Site.Pages "Section" "products").ByParam "rank") }}
+        {{ if .Params.image }}
+          <div class="col-md">
+            <div class="center-horizontally-container">
+              <img class="section-svg" src="{{ .Params.image }}" alt="{{ .Params.alt }}"/>
+            </div>
+            <div class="center-horizontally-container">
+              <p class="section-svg-description mobile-margin-container">{{ .Params.description }}</p>
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
     </div>
   </div>
 </section>

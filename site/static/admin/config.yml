@@ -1,0 +1,63 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+# This line should *not* be indented
+publish_mode: editorial_workflow
+# This line should *not* be indented
+media_folder: "site/static/img" # Media files will be stored in the repo under images
+public_folder: "img" # The src attribute for uploaded media will begin with /images/uploads
+display_url: https://collateral.fi
+slug:
+  encoding: "ascii"
+  clean_accents: true
+collections:
+  - name: "hero" # Used in routes, e.g., /admin/collections/blog
+    label: "Hero" # Used in the UI
+    folder: "site/content/hero" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Alt text", name: "alt", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+  - name: "products" # Used in routes, e.g., /admin/collections/blog
+    label: "Products" # Used in the UI
+    folder: "site/content/products" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Rank", name: "rank", widget: "number"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Alt text", name: "alt", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown"}
+  - name: "services" # Used in routes, e.g., /admin/collections/blog
+    label: "Services" # Used in the UI
+    folder: "site/content/services" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Rank", name: "rank", widget: "number"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Alt text", name: "alt", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown"}
+  - name: "team" # Used in routes, e.g., /admin/collections/blog
+    label: "Team" # Used in the UI
+    folder: "site/content/team" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Rank", name: "rank", widget: "number"}
+      - {label: "Photo", name: "photo", widget: "image"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Email", name: "email", widget: "string", required: false}
+      - {label: "Phone", name: "phone", widget: "string", required: false}
+  - name: "we" # Used in routes, e.g., /admin/collections/blog
+    label: "We" # Used in the UI
+    folder: "site/content/we" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Alt text", name: "alt", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown"}

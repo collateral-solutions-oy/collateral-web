@@ -2,15 +2,29 @@
   width: 100%;
   margin-top: 10rem;
   background-color: $color-red;
+
   .footer-logo {
     height: 2rem;
-    margin: 1.5rem;
+    margin-top: 1.5rem;
   }
+
+  .vat-number {
+    color: $color-white;
+    font-weight: bold;
+    margin: 1rem 0 0 0;
+  }
+
   .cookies, .cookie-link {
     text-align: center;
-    margin-bottom: .5rem;
     font-size: 0.75rem;
     color: $color-white;
+  }
+
+  .linkedin-link {
+    margin: 1.5rem 0;
+    .icon {
+      width: 2rem;
+    }
   }
 
   .cookie-link {

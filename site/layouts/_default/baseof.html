@@ -8,15 +8,15 @@
   <title>{{ $.Site.Title }}</title>
   <meta property="og:title" content="{{ $.Site.Title }}" />
 
-  {{ range ((where .Site.Pages "Section" "seo").ByParam "rank") }}
-    {{ if .Params.description }}
+  {{ $headlessbundle := .Site.GetPage "/seo" }}
+  {{ $resourcelist := $headlessbundle.Resources.ByType "page" }}
+  {{range $resourcelist }}
       <meta property="og:url" content="https://collateral-solutions.netlify.com" />
       <meta name="description" content="{{ .Params.description }}">
       <meta property="og:description" content="{{ .Params.description }}">
-      <meta property="og:image" content="/images/hero.jpg">
+      <meta property="og:image" content="{{ .Params.og_img }}">
 
       <link rel="canonical" href="https://collateral-solutions.netlify.com"/>
-    {{ end }}
   {{ end }}
 
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png" />

@@ -2,8 +2,8 @@
   <div class="container small-container">
     <h2 class="section-h2">Our products</h2>
     <div class="row">
-      {{ range ((where .Site.Pages "Section" "products").ByParam "rank") }}
-        {{ if .Params.image }}
+      {{$headlessbundle := .Site.GetPage "/products"}}
+      {{range ($headlessbundle.Resources.ByType "page")}}
           <div class="col-md">
             <div class="center-horizontally-container">
               <img class="section-svg" src="{{ .Params.image }}" alt="{{ .Params.alt }}"/>
@@ -12,7 +12,6 @@
               <p class="section-svg-description mobile-margin-container">{{ .Params.description }}</p>
             </div>
           </div>
-        {{ end }}
       {{ end }}
     </div>
   </div>

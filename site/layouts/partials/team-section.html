@@ -2,30 +2,30 @@
   <div class="container small-container">
     <h2 class="section-h2">Our team</h2>
     <div class="row team-members">
-      {{ range ((where .Site.Pages "Section" "team").ByParam "rank") }}
-        {{ if .Params.name }}
-          <div class="col-md">
-            <div class="center-horizontally-container">
-              <img class="section-svg lärvi" src="{{ .Params.photo }}" alt="{{ .Params.name }}" />
-            </div>
-            <div class="center-horizontally-container">
-              <p class="team-name">{{ .Params.name }}</p>
-            </div>
-            <div class="center-horizontally-container">
-              <p class="team-role">{{ .Params.role }}</p>
-            </div>
-            <div class="center-horizontally-container">
-              {{ if .Params.email }}
-                <a class="team-contact" href="mailto:{{ .Params.email }}">{{ .Params.email }}</a>
-              {{ end }}
-            </div>
-            <div class="center-horizontally-container mobile-margin-container">
-              {{ if .Params.phone }}
-                <a class="team-contact" href="tel:{{ .Params.phone }}">{{ .Params.phone }}</a>
-              {{ end }}
-            </div>
+      {{ $headlessbundle := .Site.GetPage "/team" }}
+      {{ $resourcelist := $headlessbundle.Resources.ByType "page" }}
+      {{range $resourcelist }}
+        <div class="col-md">
+          <div class="center-horizontally-container">
+            <img class="section-svg lärvi" src="{{ .Params.photo }}" alt="{{ .Params.name }}" />
           </div>
-        {{ end }}
+          <div class="center-horizontally-container">
+            <p class="team-name">{{ .Params.name }}</p>
+          </div>
+          <div class="center-horizontally-container">
+            <p class="team-role">{{ .Params.role }}</p>
+          </div>
+          <div class="center-horizontally-container">
+            {{ if .Params.email }}
+              <a class="team-contact" href="mailto:{{ .Params.email }}">{{ .Params.email }}</a>
+            {{ end }}
+          </div>
+          <div class="center-horizontally-container mobile-margin-container">
+            {{ if .Params.phone }}
+              <a class="team-contact" href="tel:{{ .Params.phone }}">{{ .Params.phone }}</a>
+            {{ end }}
+          </div>
+        </div>
       {{ end }}
     </div>
   </div>

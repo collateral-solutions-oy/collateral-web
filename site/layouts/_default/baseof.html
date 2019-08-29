@@ -11,12 +11,12 @@
   {{ $headlessbundle := .Site.GetPage "/seo" }}
   {{ $resourcelist := $headlessbundle.Resources.ByType "page" }}
   {{range $resourcelist }}
-      <meta property="og:url" content="https://collateral-solutions.netlify.com" />
+      <meta property="og:url" content="https://collateral.fi" />
       <meta name="description" content="{{ .Params.description }}">
       <meta property="og:description" content="{{ .Params.description }}">
       <meta property="og:image" content="{{ .Params.og_img }}">
 
-      <link rel="canonical" href="https://collateral-solutions.netlify.com"/>
+      <link rel="canonical" href="https://collateral.fi"/>
   {{ end }}
 
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png" />
@@ -45,11 +45,11 @@
     <link href="{{ relURL . }}" rel="stylesheet">
   {{ end }}
 
-  <!-- Hotjar Tracking Code for https://collateral-solutions.netlify.com -->
+  <!-- Hotjar Tracking Code for https://collateral.fi -->
   <script>
     (function(h,o,t,j,a,r){
       h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:1448958,hjsv:6};
+      h._hjSettings={hjid:1464182,hjsv:6};
       a=o.getElementsByTagName('head')[0];
       r=o.createElement('script');r.async=1;
       r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
